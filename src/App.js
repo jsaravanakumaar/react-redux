@@ -1,25 +1,28 @@
+//inspired by the article in medium.com https://medium.com/@bretcameron/a-beginners-guide-to-redux-with-react-50309ae09a14
+
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {Provider} from 'react-redux'; 
+
+//import Counter from './components/Counter';
+import Counter from './components/CounterReducer';
+import store from './store';
+
+//Uncomment below function to run default react state version
+//function App() {
+//  return (
+//    <>
+//      <Counter />
+//    </>
+//  );
+//}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <h1>React - Redux sample</h1>
+      <Counter />
+    </Provider>
   );
 }
 
